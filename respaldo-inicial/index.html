@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- CLASE 1: DOCTYPE indica que este documento usa HTML5. -->
+<html>
+<!-- html contiene el documento completo; se cierra al final del archivo. -->
+<head>
+    <!-- head guarda información de la página; no es el contenido visible. -->
+    <!-- charset UTF-8 permite representar tildes, eñes y otros caracteres. -->
+    <meta charset="UTF-8">
+    <!-- title es el texto de la pestaña del navegador. Probá cambiarlo. -->
+    <title>Gunda Burger's | Hamburguesas de barrio</title>
+</head>
+<body>
+    <!-- body contiene todo lo que se muestra en la página. -->
+    <!-- ETAPA 1: estructura HTML. Todavía conservamos el aspecto del navegador.
+         Los comentarios como este explican el código y no aparecen en la página.
+         Las sangrías muestran qué elementos están dentro de otros. -->
+
+    <!-- CLASE 1: header agrupa la presentación y la navegación del sitio. -->
+    <header>
+        <!-- h1 es el título principal. Usamos uno para identificar la página. -->
+        <h1>Gunda Burger's</h1>
+        <!-- p representa un párrafo. Podés reemplazar este eslogan. -->
+        <p>Hamburguesas de barrio. Calidad ante todo.</p>
+
+        <!-- nav agrupa los enlaces que ayudan a recorrer nuestra página. -->
+        <nav>
+            <!-- CLASE 2: ul es una lista sin orden numérico; li es cada elemento. -->
+            <ul>
+                <!-- a crea un enlace. href="#menu" busca el elemento con id="menu". -->
+                <li><a href="#menu">Nuestro menú</a></li>
+                <!-- Cada enlace apunta al id de una sección que está más abajo. -->
+                <li><a href="#nosotros">Nuestra historia</a></li>
+                <!-- Podés cambiar el texto del enlace sin cambiar su destino. -->
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CLASE 1: main contiene el contenido principal; hay uno en esta página. -->
+    <main>
+        <!-- section reúne contenido de un mismo tema.
+             CLASE 2: id identifica este destino; no debe repetirse en la página. -->
+        <section id="menu">
+            <!-- h2 titula una sección que depende del título principal h1. -->
+            <h2>Nuestro menú</h2>
+            <!-- Este párrafo explica las condiciones del catálogo de práctica. -->
+            <p>Todas con papas. Pa chuparse los dedos.</p>
+
+            <!-- article agrupa un producto que tiene sentido por sí mismo.
+                 Para agregar otro, copiá desde article hasta su cierre /article. -->
+            <article>
+                <!-- h3 titula un producto dentro de la sección encabezada por h2. -->
+                <h3>La Clásica</h3>
+                <!-- Cambiá los ingredientes escribiendo dentro del párrafo. -->
+                <p>Medallón de carne, cheddar, lechuga, tomate y salsa de la casa.</p>
+                <!-- El precio es texto escrito a mano: todavía no se calcula. -->
+                <p>Precio: $8.500</p>
+            </article>
+
+            <!-- Segundo producto: repetimos la estructura, cambiamos el contenido. -->
+            <article>
+                <!-- Mantiene h3 porque tiene la misma jerarquía que La Clásica. -->
+                <h3>Doble Gunda</h3>
+                <!-- p separa la descripción del nombre y del precio. -->
+                <p>Dos medallones de carne, doble cheddar, panceta y cebolla.</p>
+                <!-- Modificar este número solo cambia el texto que ves. -->
+                <p>Precio: $11.000</p>
+            </article>
+
+            <!-- Tercer producto: todos los artículos son hijos de la misma section. -->
+            <article>
+                <!-- h3 presenta el nombre de nuestra opción vegetal. -->
+                <h3>La Venga</h3>
+                <!-- Este párrafo enumera sus ingredientes. -->
+                <p>Medallón de lentejas, rúcula, tomate y mayonesa de zanahoria.</p>
+                <!-- Cada producto tiene su propio párrafo para el precio. -->
+                <p>Precio: $8.000</p>
+            </article>
+        </section>
+
+        <!-- Esta sección recibe el enlace href="#nosotros" de la navegación. -->
+        <section id="nosotros">
+            <!-- h2 comienza otro tema del mismo nivel que Nuestro menú. -->
+            <h2>Nuestra historia</h2>
+            <!-- Este texto inventado se puede reemplazar por la historia que elijas. -->
+            <p>Gunda Buerguer's nació de una idea: compartir hamburguesas caseras con el barrio.</p>
+        </section>
+
+        <!-- id="contacto" es el destino del tercer enlace del menú. -->
+        <section id="contacto">
+            <!-- h2 identifica el tema de esta sección. -->
+            <h2>Contacto</h2>
+            <!-- Es información ficticia para practicar; no publicamos datos personales. -->
+            <p>Horario de ejemplo: martes a domingos de 19 a 23:30.</p>
+            <!-- La aclaración describe el estado real de esta primera etapa. -->
+            <p>Proximamente, tus mejores Burguer'S. Por ahora, la página no recibe pedidos.</p>
+        </section>
+    </main>
+
+    <!-- footer es el pie: reúne la información final de la página. -->
+    <footer>
+        <!-- p muestra el cierre del sitio. Cambiá el nombre si elegís otra marca. -->
+        <p>Gunda Burger's · Proyecto PRO.</p>
+    </footer>
+</body>
+<!-- Cerramos body antes de html porque body está dentro de html. -->
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!-- HTML5. El idioma ayuda a lectores de pantalla y herramientas de traducción. -->
+<html lang="es">
+<head>
+    <!-- UTF-8 conserva tildes; viewport permite aplicar el diseño mobile first (clase 7). -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunda Burger's | Hamburguesas de barrio</title>
+    <!-- CSS externo: la ruta parte de la ubicación de este HTML (clase 3). -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <!-- Cabecera semántica. La clase aplica estilos; el id sirve como destino del enlace. -->
+    <header class="cabecera" id="inicio">
+        <div class="contenedor cabeceraInterior">
+            <!-- Marca enlazada al inicio; el h1 se reserva para la presentación principal. -->
+            <a class="marca" href="#inicio">Gunda Burger's<span class="marcaDetalle">HAMBURGUESAS DE BARRIO</span></a>
+            <!-- Lista de navegación: Flexbox distribuye sus elementos (clases 2 y 5). -->
+            <nav>
+                <ul class="navegacion">
+                    <li><a href="#menu">Nuestro menú</a></li>
+                    <li><a href="#nosotros">Nuestra historia</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Un único main reúne las secciones principales de la página. -->
+    <main>
+        <!-- Grid cambia esta portada de una columna a dos según el ancho disponible. -->
+        <section class="portada">
+            <div class="contenedor portadaGrilla">
+                <div class="portadaTexto">
+                    <!-- Texto secundario de presentación, sin alterar la jerarquía de títulos. -->
+                    <p class="antetitulo">BUEN PAN. BUENA CARNE. BUEN BARRIO.</p>
+                    <h1>Gunda<br>Burger's<span class="punto">.</span></h1>
+                    <!-- Conservamos tu eslogan. -->
+                    <p class="eslogan">Hamburguesas de barrio. Calidad ante todo.</p>
+                    <!-- Es un enlace de navegación con apariencia de botón; no ejecuta una compra. -->
+                    <a class="boton" href="#menu">Explorá el menú ↓</a>
+                </div>
+                <!-- Imagen local: alt describe el contenido si no se ve (clase 2). -->
+                <div class="portadaVisual">
+                    <img class="fotoPortada" src="img/doble-gunda.png" alt="Hamburguesa doble con cheddar, panceta, cebolla y papas fritas">
+                    <!-- Position absolute ubica el rótulo respecto de portadaVisual (clase 4). -->
+                    <p class="rotuloFoto">DOBLE GUNDA <span>La de la casa.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Franja de identidad: lista distribuida con Flexbox, capaz de saltar de línea. -->
+        <div class="franja">
+            <ul class="contenedor ventajas">
+                <li>HECHAS CON GANAS</li>
+                <li>TODAS CON PAPAS</li>
+                <li>CALIDAD ANTE TODO</li>
+            </ul>
+        </div>
+
+        <!-- Los id originales se mantienen para conservar la navegación. -->
+        <section class="contenedor seccion" id="menu">
+            <div class="tituloSeccion">
+                <div>
+                    <p class="antetitulo">01 / ELEGÍ TU FAVORITA</p>
+                    <h2>Nuestro menú</h2>
+                </div>
+                <!-- Conservamos tu descripción; la aclaración separa la maqueta de una tienda real. -->
+                <p>Todas con papas. Pa chuparse los dedos.</p>
+            </div>
+
+            <!-- Grid organiza las tarjetas en 1, 2 o 3 columnas (clases 6 y 7). -->
+            <div class="productos">
+                <article class="producto">
+                    <!-- El número y la categoría son texto; no funcionan como filtros. -->
+                    <div class="productoSuperior"><span>01</span><span>LA ORIGINAL</span></div>
+                    <h3>La Clásica</h3>
+                    <p class="descripcion">Medallón de carne, cheddar, lechuga, tomate y salsa de la casa.</p>
+                    <!-- Flexbox mantiene el precio y el enlace en la base de cada tarjeta. -->
+                    <div class="productoPie">
+                        <p class="precio">$10.500<span>con papas</span></p>
+                        <a class="enlaceProducto" href="#personalizar">Ver opciones ↗</a>
+                    </div>
+                </article>
+
+                <!-- Una segunda clase agrega el aspecto destacado sin repetir todas las reglas. -->
+                <article class="producto productoDestacado">
+                    <div class="productoSuperior"><span>02</span><span>LA DE LA CASA</span></div>
+                    <h3>Doble Gunda</h3>
+                    <p class="descripcion">Dos medallones de carne, doble cheddar, panceta y cebolla.</p>
+                    <div class="productoPie">
+                        <p class="precio">$19.000<span>con papas</span></p>
+                        <a class="enlaceProducto" href="#personalizar">Ver opciones ↗</a>
+                    </div>
+                </article>
+
+                <!--Una tercera clase, para los golosos-->
+                <article class = "producto productoExtra">
+                    <div class= "productoSuperior"><span>03</span><span>LA GOLOSA</span></div>
+                    <h3>Golosa Gunda</h3>
+                    <p class = "descripcion">Tres medallones de carne, triple cheddar, panceta, cebolla crujiente y salsa Honey Mustard</p>
+                    <div class ="productoPie">
+                        <p class="precio">$24.000<span>Con papas</span></p>
+                        <a class="enlaceProducto" href="#personalizar">Ver opciones</a>
+                    </div>
+                </article>
+
+                <!-- Mismo componente, conservando el nombre que elegiste para la opción vegetal. -->
+                <article class="producto">
+                    <div class="productoSuperior"><span>04</span><span>OPCIÓN VEGETAL</span></div>
+                    <h3>La Venga</h3>
+                    <p class="descripcion">Medallón de lentejas, rúcula, tomate y mayonesa de zanahoria.</p>
+                    <div class="productoPie">
+                        <p class="precio">$14.000<span>con papas</span></p>
+                        <a class="enlaceProducto" href="#personalizar">Ver opciones ↗</a>
+                    </div>
+                </article>
+            </div>
+            <!-- Los importes siguen siendo texto; no hay cálculo ni compra implementados. -->
+            <p class="nota">Precios de ejemplo en pesos argentinos. Catálogo de un local ficticio.</p>
+        </section>
+
+        <!-- Grid por áreas distribuye historia y formulario: vertical en móvil, lateral en escritorio. -->
+        <div class="contenedor comunidad">
+            <section class="historia" id="nosotros">
+                <p class="antetitulo">02 / SOMOS DEL BARRIO</p>
+                <h2>Buenas burgers.<br>Buenas juntadas.</h2>
+                <!-- Conservamos tu historia, unificando la escritura de la marca. -->
+                <p>Gunda Burger's nació de una idea: compartir hamburguesas caseras con el barrio.</p>
+                <p>Una mesa compartida, una buena charla y una hamburguesa que te hace volver.</p>
+                <p class="firma">Gunda Burger's</p>
+            </section>
+
+            <section class="personalizacion" id="personalizar">
+                <p class="antetitulo">03 / A TU MANERA</p>
+                <h2>Armá tu combinación</h2>
+                <p class="notaFormulario">Probá las opciones. Esta selección no se envía, no se guarda y no modifica los precios.</p>
+                <!-- Formulario HTML de práctica (clase 2). Sin submit ni destino de pedidos. -->
+                <form>
+                    <!-- for e id vinculan la etiqueta al control; name identifica su dato. -->
+                    <label class="etiqueta" for="hamburguesa">Tu hamburguesa</label>
+                    <select id="hamburguesa" name="hamburguesa">
+                        <option value="clasica">La Clásica</option>
+                        <option value="doble-gunda">Doble Gunda</option>
+                        <option value="golosa-gunda">Golosa Gunda</option>
+                        <option value="la-venga">La Venga</option>
+                    </select>
+                    <!-- fieldset agrupa controles; legend nombra el grupo. -->
+                    <fieldset>
+                        <legend>¿Cómo la acompañás?</legend>
+                        <!-- Compartir name hace que solo se pueda elegir una opción de radio. -->
+                        <label class="opcion"><input type="radio" name="papas" value="clasicas" checked> Papas clásicas</label>
+                        <label class="opcion"><input type="radio" name="papas" value="rusticas"> Papas rústicas</label>
+                    </fieldset>
+                    <!-- Checkbox permite marcar una preferencia independiente. -->
+                    <label class="opcion"><input type="checkbox" name="salsa-aparte" value="si"> Salsa aparte</label>
+                    <label class="etiqueta" for="aclaraciones">¿Alguna aclaración?</label>
+                    <!-- textarea admite varias líneas; rows fija una altura inicial en líneas. -->
+                    <textarea id="aclaraciones" name="aclaraciones" rows="3"></textarea>
+                    <!-- Reset restaura los valores iniciales usando comportamiento nativo de HTML. -->
+                    <input class="boton botonSecundario" type="reset" value="Restablecer opciones">
+                </form>
+            </section>
+        </div>
+
+        <!-- Tabla para información tabulada; la distribución de la página sigue a cargo de CSS. -->
+        <section class="contenedor seccion contacto" id="contacto">
+            <div>
+                <p class="antetitulo">04 / NOS VEMOS PRONTO</p>
+                <h2>El barrio tiene<br>un nuevo antojo.</h2>
+                <!-- Conservamos el mensaje y el horario, corrigiendo solo la ortografía. -->
+                <p>Próximamente, tus mejores burgers. Por ahora, la página no recibe pedidos.</p>
+            </div>
+            <div class="horarios">
+                <h3>Horario de ejemplo</h3>
+                <!-- Cada tr es una fila y cada td contiene el día o su horario. -->
+                <table>
+                    <tr><td>Martes a domingos</td><td>19 a 23:30</td></tr>
+                    <tr><td>Lunes</td><td>Cerrado</td></tr>
+                </table>
+                <p class="nota">Local ficticio · Apertura próximamente</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie con tu texto original y un enlace interno funcional. -->
+    <footer class="pie">
+        <div class="contenedor pieInterior">
+            <p>Gunda Burger's · Proyecto PRO.</p>
+            <a href="#inicio">Volver arriba ↑</a>
+        </div>
+    </footer>
+</body>
+</html>

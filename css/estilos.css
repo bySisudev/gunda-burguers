@@ -1,0 +1,465 @@
+/* CLASE 3: archivo externo. Selectores de etiqueta para bases, clases para componentes.
+   Mobile first: las reglas iniciales sirven para móvil; las media queries amplían el layout.
+   Paleta: crema #f6f0e4, carbón #28211e, mostaza #efb64b y bordó #78372f.
+   El crema da descanso; el mostaza identifica la honey mustard; los bordes remiten a ingredientes. Sin librerías ni JavaScript. */
+
+* {
+    margin: 0; /* Reset: quitamos los márgenes predeterminados. */
+    padding: 0; /* Reset: también quitamos los rellenos predeterminados. */
+}
+
+body {
+    background-color: #f6f0e4; /* Fondo general de la página. */
+    color: #28211e; /* Color heredado por los textos. */
+    font-family: Arial, sans-serif; /* Fuente local y alternativa genérica. */
+    font-size: 16px; /* Tamaño base legible. */
+    line-height: 1.6; /* Separación entre líneas proporcional a la fuente. */
+}
+
+a {
+    color: inherit; /* El enlace toma el color del contenedor. */
+}
+
+.contenedor {
+    width: 88%; /* Un ancho porcentual deja aire lateral sin fijar el tamaño de pantalla. */
+    margin: 0 auto; /* Márgenes automáticos centran el bloque. */
+}
+
+h1, h2, h3, .marca, .firma {
+    font-family: Impact, 'Arial Narrow', sans-serif; /* Tipografía local de carácter fuerte. */
+    font-weight: normal; /* Evita añadir negrita sintética a Impact. */
+    line-height: 1.1; /* Títulos más compactos que los párrafos. */
+}
+
+h2 {
+    font-size: 36px; /* Tamaño de los títulos de sección en móvil. */
+    margin-bottom: 18px; /* Espacio externo hacia el contenido siguiente. */
+}
+
+h3 {
+    font-size: 30px; /* Jerarquía visual de cada producto. */
+}
+
+.antetitulo {
+    font-size: 11px; /* Texto pequeño de orientación. */
+    font-weight: bold; /* Destaca las etiquetas de sección. */
+    margin-bottom: 18px; /* Separa la etiqueta del título. */
+}
+
+.cabecera, .portada, .pie {
+    background-color: #28211e; /* Las tres zonas comparten fondo oscuro. */
+    color: #f6f0e4; /* Contraste claro sobre ese fondo. */
+}
+
+.cabecera {
+    border-bottom: 1px solid #504039; /* Línea sutil de separación. */
+}
+
+.cabeceraInterior {
+    display: flex; /* CLASE 5: distribuye marca y navegación. */
+    flex-direction: column; /* En móvil apilamos los dos bloques. */
+    align-items: center; /* Centramos los hijos sobre el eje transversal. */
+    padding: 24px 0; /* Relleno vertical; el ancho no aumenta. */
+}
+
+.marca {
+    font-size: 29px; /* Identidad de la cabecera. */
+    text-decoration: none; /* Quitamos el subrayado del enlace de marca. */
+}
+
+.marcaDetalle {
+    display: block; /* El subtítulo ocupa su propia línea. */
+    font-family: Arial, sans-serif; /* Contrasta con la tipografía de la marca. */
+    font-size: 9px; /* Escala secundaria. */
+    margin-top: 7px; /* Separación entre marca y subtítulo. */
+}
+
+.navegacion {
+    list-style-type: none; /* Quitamos las viñetas de la lista. */
+    display: flex; /* Enlaces en una fila flexible. */
+    flex-wrap: wrap; /* Permite pasar a otra línea si no entran. */
+    justify-content: center; /* Centra las filas del menú. */
+    margin-top: 18px; /* Separa la navegación de la marca en móvil. */
+}
+
+.navegacion a {
+    display: inline-block; /* Permite aplicar relleno vertical al enlace. */
+    padding: 8px 10px; /* Amplía el área pulsable. */
+    font-size: 13px; /* Tamaño compacto para la navegación. */
+    text-decoration: none; /* Navegación sin subrayado permanente. */
+}
+
+.portada {
+    padding: 44px 0; /* Aire arriba y debajo de la presentación. */
+}
+
+.portadaGrilla {
+    display: grid; /* CLASE 6: texto e imagen forman una grilla. */
+    grid-template-columns: 1fr; /* Una columna que ocupa el espacio disponible. */
+    row-gap: 32px; /* Separación vertical entre texto e imagen. */
+    align-items: center; /* Alineación vertical dentro de cada celda. */
+}
+
+h1 {
+    font-size: 70px; /* Escala de portada para móvil. */
+    margin-bottom: 22px; /* Separa el título del eslogan. */
+}
+
+.punto {
+    color: #efb64b; /* Acento de identidad dentro del título. */
+}
+
+.eslogan {
+    font-size: 18px; /* Texto principal de apoyo. */
+    margin-bottom: 28px; /* Espacio antes del enlace al catálogo. */
+}
+
+.boton {
+    display: inline-block; /* Respeta rellenos y ocupa el ancho de su contenido. */
+    padding: 13px 20px; /* CLASE 4: espacio interno del botón. */
+    background-color: #efb64b; /* Color de acción principal. */
+    color: #28211e; /* Texto oscuro sobre mostaza. */
+    border: 1px solid #efb64b; /* Borde de grosor uniforme. */
+    font-family: Arial, sans-serif; /* Unifica enlaces e inputs. */
+    font-size: 14px; /* Texto del control. */
+    font-weight: bold; /* Refuerza su jerarquía. */
+    text-decoration: none; /* El enlace se presenta como botón. */
+}
+
+.portadaVisual {
+    position: relative; /* Referencia de posición para el rótulo hijo. */
+    border: 1px solid #685144; /* Marco cálido que acompaña los tonos de la fotografía. */
+    
+}
+
+.fotoPortada {
+    display: block; /* Elimina el espacio de línea bajo las imágenes inline. */
+    width: 100%; /* La imagen se adapta al ancho de su celda. */
+    height: auto; /* Mantiene su proporción original. */
+}
+
+.rotuloFoto {
+    position: absolute; /* Superpone el rótulo sin desplazar la foto. */
+    bottom: 16px; /* Distancia al borde inferior del contenedor relativo. */
+    left: 16px; /* Distancia al borde izquierdo. */
+    background-color: #f6f0e4; /* Fondo sólido para legibilidad sobre la foto. */
+    color: #28211e; /* Contraste del texto del rótulo. */
+    padding: 10px 14px; /* Relleno de la etiqueta. */
+    font-size: 11px; /* Escala secundaria de texto. */
+    font-weight: bold; /* Destaca el nombre del producto. */
+}
+
+.rotuloFoto span {
+    display: block; /* La bajada aparece debajo del nombre. */
+    font-weight: normal; /* Diferencia el subtítulo. */
+}
+
+.franja {
+    background-color: #efb64b; /* Banda mostaza que conecta la portada con el menú. */
+    padding: 15px 0; /* Aire vertical. */
+}
+
+.ventajas {
+    list-style-type: none; /* No necesitamos viñetas visuales. */
+    display: flex; /* Elementos distribuidos horizontalmente. */
+    flex-wrap: wrap; /* La banda se adapta si el texto no entra. */
+    justify-content: space-around; /* Reparte el espacio alrededor de los elementos. */
+    font-size: 11px; /* Texto compacto para la banda. */
+    font-weight: bold; /* Sostiene el contraste de jerarquía. */
+}
+
+.ventajas li {
+    margin: 5px 10px; /* Evita que se toquen cuando pasan de línea. */
+}
+
+.seccion {
+    padding: 58px 0; /* Separación vertical de las secciones. */
+}
+
+.tituloSeccion {
+    margin-bottom: 28px; /* Distancia entre encabezado y catálogo. */
+}
+
+.productos {
+    display: grid; /* Catálogo bidimensional. */
+    grid-template-columns: 1fr; /* Una tarjeta por fila en móvil. */
+    column-gap: 20px; /* Separación horizontal entre tarjetas. */
+    row-gap: 20px; /* Separación vertical entre tarjetas. */
+}
+
+.producto {
+    display: flex; /* Flexbox organiza el interior de cada tarjeta. */
+    flex-direction: column; /* Contenido apilado verticalmente. */
+    padding: 24px 20px; /* Menos relleno lateral deja espacio al texto en las cuatro columnas. */
+    border: 2px solid #cf9840; /* Borde dorado que remite al cheddar de La Clásica. */
+    border-top: 4px solid #cf9840; /* Refuerza el acento del ingrediente en la parte superior. */
+    background-color: #191918; /* Base negra compartida por las tarjetas sin fondo especial. */
+    color: #ffffff; /* Texto blanco que también heredan precios y enlaces. */
+}
+
+.productoDestacado {
+    border-color: #f0a32d; /* Naranja cheddar para Doble Gunda; conserva el fondo negro de producto. */
+}
+.productoExtra {
+    background-color: #dca52d; /* Mostaza miel: referencia directa a la salsa honey mustard. */
+    color: #211b12; /* Texto oscuro sobre mostaza para conservar buena legibilidad. */
+    border-color: #a87416; /* Borde mostaza tostado de la misma familia que el fondo. */
+}   
+
+.productoSuperior {
+    display: flex; /* Número a un lado, categoría al otro. */
+    justify-content: space-between; /* Aprovecha el espacio entre ambos textos. */
+    font-size: 11px; /* Categorías pequeñas pero legibles. */
+    font-weight: bold; /* Hace legibles las categorías pequeñas. */
+    margin-bottom: 36px; /* Da aire antes del nombre. */
+}
+
+.descripcion {
+    margin: 16px 0 28px; /* Espacio superior e inferior; laterales sin margen. */
+    font-size: 15px; /* Escala del detalle del producto. */
+}
+
+/* Selecciona productoPie únicamente dentro de la tarjeta productoExtra. */
+.productoExtra .productoPie {
+    flex-direction:column; /* dirección que apila los elementos */
+    align-items:flex-start; /* alineación al inicio del eje transversal */
+}
+
+.productoPie {
+    margin-top: auto; /* Absorbe espacio libre y alinea las bases dentro de la fila de Grid. */
+    padding-top: 22px; /* Separación respecto al borde superior. */
+    border-top: 1px solid; /* Usa el color del texto: blanco en tarjetas negras y oscuro en Golosa. */
+    display: flex; /* Precio y enlace comparten una fila. */
+    flex-wrap: wrap; /* Pueden pasar de línea si falta espacio. */
+    justify-content: space-between; /* Los separa hacia los extremos. */
+    align-items: center; /* Centra ambos bloques verticalmente. */
+}
+
+.precio {
+    font-size: 27px; /* Jerarquía del importe. */
+    font-weight: bold; /* Refuerza la lectura del precio. */
+    margin-right: 12px; /* Aire si el enlace queda a su lado. */
+}
+
+.precio span {
+    display: block; /* Aclaración debajo del importe. */
+    font-size: 11px; /* Escala secundaria. */
+    font-weight: normal; /* No compite con el precio. */
+}
+
+.enlaceProducto {
+    font-size: 12px; /* Acción secundaria dentro de la tarjeta. */
+    padding: 10px 0; /* Área de interacción vertical. */
+}
+
+.nota {
+    margin-top: 20px; /* Distancia respecto del contenido anterior. */
+    font-size: 12px; /* Texto aclaratorio. */
+    color: #6b5c50; /* Contraste secundario sobre crema. */
+}
+
+.comunidad {
+    display: grid; /* Grilla de historia y formulario. */
+    grid-template-areas: "historia" "formulario"; /* Áreas apiladas en móvil. */
+    grid-template-columns: 1fr; /* Una columna. */
+    row-gap: 24px; /* Separación entre áreas. */
+    column-gap: 24px; /* Separación al pasar a dos columnas. */
+}
+
+.historia {
+    grid-area: historia; /* Asocia este elemento al área nombrada en el padre. */
+    background-color: #e8decd; /* Arena: una pausa visual junto al formulario claro. */
+    padding: 30px; /* Relleno interior de la sección. */
+}
+
+.historia p {
+    margin-bottom: 22px; /* Separa los párrafos de esta sección. */
+}
+
+.firma {
+    font-size: 32px; /* Firma tipográfica de la marca. */
+    margin-top: 40px; /* La separa del relato. */
+}
+
+.personalizacion {
+    grid-area: formulario; /* Conecta la sección con su área de Grid. */
+    background-color: #fffcf6; /* Panel claro que diferencia la zona de interacción. */
+    border: 1px solid #d7cbbb; /* Delimita el panel. */
+    padding: 30px; /* Espacio interno. */
+}
+
+.personalizacion h2 {
+    font-size: 30px; /* Ajusta el título a un panel más estrecho. */
+}
+
+.notaFormulario {
+    font-size: 13px; /* Aclara el alcance del formulario antes de usarlo. */
+    margin-bottom: 22px; /* Aire antes del primer control. */
+}
+
+.etiqueta {
+    display: block; /* Cada etiqueta comienza su propia línea. */
+    margin: 18px 0 8px; /* Separación arriba y respecto a su control. */
+    font-size: 13px; /* Tamaño de etiquetas de formulario. */
+    font-weight: bold; /* Identifica el nombre del campo. */
+}
+
+select, textarea {
+    display: block; /* Cada campo ocupa su propia línea. */
+    width: 100%; /* Ancho completo sin relleno horizontal adicional. */
+    padding: 10px 0; /* Relleno solo vertical: no incrementa el ancho del contenido. */
+    border: 0; /* Quita el borde nativo para evitar sumarlo al ancho del 100%. */
+    border-bottom: 1px solid #6b5c50; /* Conserva un límite visible. */
+    background-color: #f0e8da; /* Campos algo más oscuros que el panel para reconocerlos. */
+    color: #28211e; /* Color del texto introducido. */
+    font-family: Arial, sans-serif; /* Evita la fuente monoespaciada nativa del textarea. */
+    font-size: 16px; /* Tamaño legible en móvil. */
+}
+
+fieldset {
+    border: 0; /* Quitamos el marco nativo, conservando la agrupación semántica. */
+    margin: 20px 0; /* Separación vertical del grupo. */
+}
+
+legend {
+    font-size: 13px; /* Jerarquía del nombre de grupo. */
+    font-weight: bold; /* Lo distingue de las opciones. */
+    margin-bottom: 8px; /* Distancia a los radio buttons. */
+}
+
+.opcion {
+    display: block; /* Una opción por línea. */
+    padding: 6px 0; /* Área de clic vertical: el label también activa el input. */
+    font-size: 14px; /* Tamaño del texto de opción. */
+}
+
+.opcion input {
+    margin-right: 6px; /* Distancia entre control y texto. */
+}
+
+.botonSecundario {
+    margin-top: 20px; /* Distancia al textarea. */
+    background-color: #28211e; /* Variante oscura del botón. */
+    border-color: #28211e; /* Borde consistente con el fondo. */
+    color: #f6f0e4; /* Texto claro sobre oscuro. */
+    font-size: 12px; /* Permite que el texto entre en pantallas pequeñas. */
+}
+
+.contacto {
+    display: grid; /* Separa presentación y horarios. */
+    grid-template-columns: 1fr; /* En móvil van uno debajo del otro. */
+    row-gap: 30px; /* Espacio vertical entre los bloques. */
+    column-gap: 50px; /* Espacio horizontal cuando haya dos columnas. */
+    align-items: center; /* Centrado vertical entre las celdas. */
+}
+
+.horarios h3 {
+    font-size: 25px; /* Encabezado secundario de horarios. */
+    margin-bottom: 18px; /* Separación de la tabla. */
+}
+
+table {
+    width: 100%; /* La tabla usa el ancho disponible en su celda. */
+    font-size: 14px; /* Tamaño del contenido tabulado. */
+}
+
+td {
+    padding: 12px 5px; /* Aire dentro de cada celda. */
+    border-bottom: 1px solid #d7cbbb; /* Separa visualmente las filas. */
+}
+
+.pieInterior {
+    display: flex; /* Distribución del texto y el enlace final. */
+    flex-wrap: wrap; /* En pantallas angostas permite otra línea. */
+    justify-content: space-between; /* Separa los bloques horizontalmente. */
+    padding: 28px 0; /* Aire vertical del pie. */
+    font-size: 12px; /* Escala de información secundaria. */
+}
+
+.pieInterior a {
+    padding: 6px 0; /* Aumenta el área pulsable del enlace. */
+}
+
+/* Detalles de identidad: reutilizan selectores y propiedades de las clases 3 y 4. */
+.portada .antetitulo, .marcaDetalle {
+    color: #efb64b; /* Mostaza sobre carbón para conectar los detalles de la marca. */
+}
+
+.productoVegetal {
+    border-color: #83b966; /* Verde de la rúcula y los vegetales; hereda fondo negro y texto blanco. */
+}
+
+.productoSuperior {
+    padding-bottom: 14px; /* Espacio entre la categoría y su línea divisoria. */
+    border-bottom: 1px solid; /* Hereda el color de texto de cada variante. */
+}
+
+.enlaceProducto {
+    font-weight: bold; /* Hace más visible el enlace sin introducir otro color. */
+}
+
+.historia .antetitulo, .contacto .antetitulo, .tituloSeccion .antetitulo {
+    color: #78372f; /* Bordó como acento secundario sobre fondos claros. */
+}
+
+/* CLASE 7: reglas desde tablet. Se combinan con las anteriores, no las reemplazan todas. */
+@media (min-width: 768px) {
+    .cabeceraInterior {
+        flex-direction: row; /* Marca y navegación comparten la fila. */
+        justify-content: space-between; /* Marca a la izquierda, menú a la derecha. */
+    }
+    .navegacion {
+        margin-top: 0; /* Ya no necesita separación vertical de la marca. */
+    }
+    .portadaGrilla {
+        grid-template-columns: 1fr 1fr; /* Mitad texto, mitad imagen. */
+        column-gap: 30px; /* Separación entre las dos celdas. */
+    }
+    .productos {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas del mismo ancho. */
+    }
+    .contacto {
+        grid-template-columns: 1fr 1fr; /* Presentación y tabla en paralelo. */
+    }
+}
+
+/* Escritorio: aprovechamos el ancho para cuatro productos y el layout de dos áreas. */
+@media (min-width: 1100px) {
+    .contenedor {
+        width: 86%; /* Ajuste de los márgenes laterales en escritorio. */
+    }
+    h1 {
+        font-size: 112px; /* Mayor presencia de marca cuando hay espacio. */
+    }
+    h2 {
+        font-size: 46px; /* Escala de títulos para escritorio. */
+    }
+    .portada {
+        padding: 60px 0; /* Mayor aire de presentación. */
+    }
+    .portadaGrilla {
+        grid-template-columns: 0.9fr 1.1fr; /* La imagen recibe algo más de ancho. */
+    }
+    .tituloSeccion {
+        display: flex; /* Encabezado y descripción en una misma fila. */
+        justify-content: space-between; /* Distribución hacia los extremos. */
+        align-items: center; /* Alineación sobre el eje vertical. */
+    }
+    .productos {
+        grid-template-columns: repeat(4, 1fr); /* cuatro tarjetas iguales por fila. */
+    }
+    .comunidad {
+        grid-template-areas: "historia formulario"; /* Las áreas ahora quedan lado a lado. */
+        grid-template-columns: 1fr 1fr; /* Cada sección ocupa la mitad disponible. */
+    }
+    .historia, .personalizacion {
+        padding: 44px; /* Más espacio interior para pantallas amplias. */
+    }
+}
+
+/* Tope del contenedor en monitores grandes, sin agrandar indefinidamente el contenido. */
+@media (min-width: 1440px) {
+    .contenedor {
+        width: 1240px; /* Ancho fijo seguro porque esta regla solo aplica desde 1440px. */
+    }
+}
